@@ -1,1 +1,21 @@
 <h1>Make a Payment</h1>
+
+<form action="/" method="get">
+  <fieldset>
+    <label for="account-from">From:</label>
+    <select name="account-from" required>
+      <option value="01">Nirvana</option>
+      <option value="02">Queen</option>
+      <option value="03">Abba</option>
+    </select><br>
+    <label for="account-to">Transfer to:</label>
+    <select name="account-to" required>
+      <option value="01">Nirvana</option>
+      <option value="02">Queen</option>
+      <option value="03">Abba</option>
+    </select><br>
+    <label for="amount">Amount:   £</label>
+  <input name="amount" type="text" maxlength="15" required></input><br>
+  </fieldset>
+  <button type="submit">Make Payment</button>
+</form>

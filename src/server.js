@@ -1,4 +1,3 @@
-const path = require('path');
 const Hapi = require('hapi');
 const Vision = require('vision');
 const Inert = require('inert');
@@ -8,11 +7,6 @@ const server = new Hapi.Server();
 
 server.connection({
   port: process.env.PORT || 8000,
-  routes: {
-    files: {
-      relativeTo: path.join(__dirname, '..', 'public')
-    }
-  }
 });
 
 server.register([Vision, Inert], err => {
@@ -22,7 +16,7 @@ server.register([Vision, Inert], err => {
     engines: {
       hbs: require('handlebars')
     },
-    relativeTo: path.join(__dirname, '..', 'public'),
+    relativeTo: __dirname,
     layoutPath: '../views/layout',
     layout: 'default',
     path: '../views'

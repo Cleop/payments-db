@@ -16,7 +16,16 @@ const home = {
   }
 };
 
+const payments = {
+  method: 'GET',
+  path: '/payments',
+  handler:(req, reply) => {
+    reply.view('payments');
+  }
+}
+
 module.exports = [
   general,
-  home
+  home,
+  payments
 ];

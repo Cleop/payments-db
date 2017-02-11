@@ -18,7 +18,7 @@ const home = {
     getAccounts((error, accounts) => {
       if (error) console.log('Error:', error);
       console.log("Got this far");
-      reply.view('index');
+      reply.view('index', {accounts});
     });
   }
 };

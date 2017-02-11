@@ -1,3 +1,5 @@
+const getAccounts = require('./database/queries/get_accounts.js');
+
 const general = {
   method: 'GET',
   path: '/{file*}',
@@ -12,7 +14,12 @@ const home = {
   method: 'GET',
   path: '/',
   handler:(req, reply) => {
-    reply.view('index');
+    console.log("Running handler");
+    getAccounts((error, accounts) => {
+      if (error) console.log('Error:', error);
+      console.log("Got this far");
+      reply.view('index');
+    });
   }
 };
 

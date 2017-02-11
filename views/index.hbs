@@ -1,12 +1,21 @@
 <h1>Summary of Accounts</h1>
-<h2>Account Name</h2>
-<h2>Balance</h2>
+<h3 class="accounts">Account Name</h3>
+<h3 class="balance">Balance</h3>
 
-<ul>
+<div class="accounts__names">
+<ul class="list">
   {{#each accounts}}
-  <li>{{this.acc_name}} £{{this.balance}}</li>
+  <li>{{this.acc_name}}</li>
   {{/each}}
 </ul>
+</div>
 
+<div class="balance__results">
+<ul class="list">
+  {{#each accounts}}
+  <li>£{{this.balance}}</li>
+  {{/each}}
+</ul>
+</div>
 
-<a href="/payments">Make a Payment</a>
+<a class="link" href="/payments">Make a Payment</a>

@@ -1,3 +1,24 @@
 body {
   font-family: 'Roboto', arial;
 }
+
+.balance {
+  padding: 0.1em 0.1em;
+}
+
+.accounts {
+  padding: 0.1em 0.1em;
+}
+
+.accounts__names {
+  display: inline-block;
+}
+
+.balance__results {
+  display: inline-block;
+}
+
+.list {
+  display: inline-block;
+  list-style-type: none;
+}

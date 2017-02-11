@@ -17,7 +17,8 @@ const home = {
     console.log("Running handler");
     getAccounts((error, accounts) => {
       if (error) console.log('Error:', error);
-      console.log("Got this far");
+      console.log("Back in router");
+      console.log(accounts);
       reply.view('index', {accounts});
     });
   }

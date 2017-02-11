@@ -22,3 +22,8 @@ body {
   display: inline-block;
   list-style-type: none;
 }
+
+.link {
+  display: block;
+  text-align: center;
+}

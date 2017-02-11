@@ -2,4 +2,11 @@
 <h2>Account Name</h2>
 <h2>Balance</h2>
 
+<ul>
+  {{#each users}}
+  <li>{{this.accName}} {{this.balance}}</li>
+  {{/each}}
+</ul>
+
+
 <a href="/payments">Make a Payment</a>

@@ -1,21 +1,22 @@
 <h1>Summary of Accounts</h1>
-<h3 class="accounts">Account Name</h3>
-<h3 class="balance">Balance</h3>
+<table class="table">
+  <tr>
+    <th class="column column--title">Account</th>
+    <th class="column column--title">Balance</th>
+  </tr>
+  <tr>
+    <td class="column">{{accounts.0.acc_name}}</td>
+    <td class="column">£{{accounts.0.balance}}</td>
+  </tr>
+  <tr>
+    <td class="column">{{accounts.1.acc_name}}</td>
+    <td class="column">£{{accounts.1.balance}}</td>
+  </tr>
+  <tr>
+    <td class="column">{{accounts.2.acc_name}}</td>
+    <td class="column">£{{accounts.2.balance}}</td>
+  </tr>
+</table>
 
-<div class="accounts__names">
-<ul class="list">
-  {{#each accounts}}
-  <li>{{this.acc_name}}</li>
-  {{/each}}
-</ul>
-</div>
-
-<div class="balance__results">
-<ul class="list">
-  {{#each accounts}}
-  <li>£{{this.balance}}</li>
-  {{/each}}
-</ul>
-</div>
 
 <a class="link" href="/payments">Make a Payment</a>

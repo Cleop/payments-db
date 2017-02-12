@@ -33,7 +33,7 @@ const payments = {
 
 const accounts = {
   method: 'GET',
-  path: '/account/nirvana',
+  path: '/nirvana',
   handler:(req, reply) => {
     getTransactions((error, transactions) => {
       if (error) console.log('Error:', error);

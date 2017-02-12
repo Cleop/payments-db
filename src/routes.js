@@ -1,4 +1,5 @@
 const getAccounts = require('./database/queries/get_accounts.js');
+const getTransactions = require('./database/queries/get_transactions.js');
 
 const general = {
   method: 'GET',
@@ -14,11 +15,9 @@ const home = {
   method: 'GET',
   path: '/',
   handler:(req, reply) => {
-    console.log("Running handler");
     getAccounts((error, accounts) => {
       if (error) console.log('Error:', error);
       console.log("Back in router");
-      console.log(accounts);
       reply.view('index', {accounts});
     });
   }
@@ -32,8 +31,21 @@ const payments = {
   }
 }
 
+const accounts = {
+  method: 'GET',
+  path: '/account/nirvana',
+  handler:(req, reply) => {
+    getTransactions((error, transactions) => {
+      if (error) console.log('Error:', error);
+      console.log(transactions);
+      reply.view('account', {transactions});
+    });
+  }
+};
+
 module.exports = [
   general,
   home,
-  payments
+  payments,
+  accounts
 ];

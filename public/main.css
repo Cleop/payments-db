@@ -2,28 +2,20 @@ body {
   font-family: 'Roboto', arial;
 }
 
-.balance {
-  padding: 0.1em 0.1em;
+.column--title {
+  font-weight: 900;
 }
 
-.accounts {
-  padding: 0.1em 0.1em;
+.table {
+  margin: auto;
 }
 
-.accounts__names {
-  display: inline-block;
-}
-
-.balance__results {
-  display: inline-block;
-}
-
-.list {
-  display: inline-block;
-  list-style-type: none;
+.column {
+  padding: 0.3em 0.4em;
 }
 
 .link {
   display: block;
   text-align: center;
+  padding: 1em 0;
 }

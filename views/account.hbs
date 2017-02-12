@@ -1,0 +1,14 @@
+<h1>Nirvana Account</h1>
+
+<h2>Transaction history</h2>
+
+<div class="nirvana_history">
+{{#each transactions}}
+<p>{{this.tran_date}}</p>
+<p>£{{this.amount}}</p>
+<p>{{this.acc_id_from}}</p>
+<p>{{this.acc_id_to}}</p>
+{{/each}}
+</div>
+
+<a class="link" href="/">Home</a>

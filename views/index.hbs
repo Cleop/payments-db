@@ -4,19 +4,14 @@
     <th class="column column--title">Account</th>
     <th class="column column--title">Balance</th>
   </tr>
+  {{#each accounts}}
   <tr>
-    <!-- <a href='/nirvana'><td class="column">{{accounts.0.acc_name}}</td></a> -->
-    <td class="column">{{accounts.0.acc_name}}</td>
-    <td class="column">£{{accounts.0.balance}}</td>
+    <a href='/nirvana'>
+      <td class="column">{{acc_name}}</td>
+    </a>
+    <td class="column">£{{balance}}</td>
   </tr>
-  <tr>
-    <td class="column">{{accounts.1.acc_name}}</td>
-    <td class="column">£{{accounts.1.balance}}</td>
-  </tr>
-  <tr>
-    <td class="column">{{accounts.2.acc_name}}</td>
-    <td class="column">£{{accounts.2.balance}}</td>
-  </tr>
+  {{/each}}
 </table>
 
 <a class="link" href="/nirvana">Nirvana Account History</a>

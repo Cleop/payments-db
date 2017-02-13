@@ -2,12 +2,12 @@ body {
   font-family: 'Roboto', arial;
 }
 
-.column--title {
-  font-weight: 900;
-}
-
 .table {
   margin: auto;
+}
+
+.column--title {
+  font-weight: 900;
 }
 
 .column {

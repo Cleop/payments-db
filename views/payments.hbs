@@ -1,23 +1,24 @@
 <h1>Make a Payment</h1>
 
-<form action="/" method="get">
+<form action="/new-payment" method="POST">
   <fieldset>
-    <label for="account-from">From:</label>
-    <select name="account-from" required>
-      <option value="01">Nirvana</option>
-      <option value="02">Queen</option>
-      <option value="03">Abba</option>
+    <label for="account_from">From:</label>
+    <select name="account_from" required>
+      <option value="1">Nirvana</option>
+      <option value="2">Queen</option>
+      <option value="3">Abba</option>
     </select><br>
-    <label for="account-to">Transfer to:</label>
-    <select name="account-to" required>
-      <option value="01">Nirvana</option>
-      <option value="02">Queen</option>
-      <option value="03">Abba</option>
+    <label for="account_to">Transfer to:</label>
+    <select name="account_to" required>
+      <option value="1">Nirvana</option>
+      <option value="2">Queen</option>
+      <option value="3">Abba</option>
     </select><br>
     <label for="amount">Amount:   £</label>
   <input name="amount" type="text" maxlength="15" required></input><br>
   </fieldset>
-  <button type="submit">Make Payment</button>
+  <input type="submit" value="Make Payment">
+  <!-- <input type="hidden" name="transaction_id" value="{{transaction_id}}"> -->
 </form>
 
 <a class="link" href="/">Home</a>

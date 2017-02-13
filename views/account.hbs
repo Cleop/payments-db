@@ -2,41 +2,21 @@
 
 <h2>Transaction history</h2>
 
-<!-- <div class="nirvana_history">
-{{#each transactions}}
-<p>{{this.tran_date}}</p>
-<p>£{{this.amount}}</p>
-<p>{{this.acc_id_from}}</p>
-<p>{{this.acc_id_to}}</p>
-{{/each}}
-</div> -->
-
 <table>
   <tr>
     <th class="column--title column">Date</th>
     <th class="column--title column">Details</th>
     <th class="column--title column">Amount</th>
   </tr>
+
+  {{#each transactions}}
   <tr>
-    <td class="column">{{transactions.0.tran_date}}</td>
-    <td class="column">{{transactions.0.acc_id_from}}>{{transactions.0.acc_id_to}}</td>
-    <td class="column">£{{transactions.0.amount}}</td>
+    <td class="column">{{tran_date}}</td>
+    <td class="column">{{acc_id_from}}>{{acc_id_to}}</td>
+    <td class="column">£{{amount}}</td>
   </tr>
-  <tr>
-    <td class="column">{{transactions.1.tran_date}}</td>
-    <td class="column">{{transactions.1.acc_id_from}}>{{transactions.1.acc_id_to}}</td>
-    <td class="column">£{{transactions.1.amount}}</td>
-  </tr>
-  <tr>
-    <td class="column">{{transactions.2.tran_date}}</td>
-    <td class="column">{{transactions.2.acc_id_from}}>{{transactions.2.acc_id_to}}</td>
-    <td class="column">£{{transactions.2.amount}}</td>
-  </tr>
-  <tr>
-    <td class="column">{{transactions.3.tran_date}}</td>
-    <td class="column">{{transactions.3.acc_id_from}}>{{transactions.3.acc_id_to}}</td>
-    <td class="column">£{{transactions.3.amount}}</td>
-  </tr>
+  {{/each}}
+
 </table>
 
 <a class="link" href="/">Home</a>

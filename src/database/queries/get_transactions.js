@@ -12,5 +12,3 @@ module.exports = (cb) => {
       error ? cb(error) : cb(null, result.rows);
     });
 };
-
-// SELECT CONVERT(date, getdate())

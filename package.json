@@ -7,7 +7,7 @@
     "build": "node ./src/database/buildsdb.js",
     "start": "node ./src/start.js",
     "devStart": "nodemon ./src/start.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+     "test": "tape './src/test/*.js'"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "vision": "^4.1.1"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "tape": "^4.6.3"
   }
 }

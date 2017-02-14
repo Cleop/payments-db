@@ -1,15 +1,11 @@
 const dbConn = require('../db_connection.js');
 
 module.exports = (transaction, cb) => {
-  console.log('Running make_transfer.js');
-  console.log(transaction.amount, transaction.account_from);
   // check sender has available balance
   const fromId = parseInt(transaction.account_from, 10) + 1;
   const toId = parseInt(transaction.account_to, 10) + 1;
   const amount = parseFloat(transaction.amount);
   const debit = 0 - amount;
-
-  console.log('fromId:', fromId, 'toId:', toId, 'amount:', amount);
 
   dbConn.query(`
     SELECT t.acc_id_to, a.acc_name, t.balance
@@ -21,8 +17,6 @@ module.exports = (transaction, cb) => {
     JOIN accounts a ON t.acc_id_to = a.acc_id
     WHERE a.acc_id = $1
   `, [fromId], (err, data) => {
-    console.log(err, data);
-    console.log("balance:" + data.rows[0].balance);
     // check the "From" account has sufficient balance
     if(data.rows[0].balance < amount) {
       return cb('Error: Insufficient Funds!', data);

@@ -1,0 +1,5 @@
+Hello,
+
+This is an automated message to notify you that the {{acc_name_from}} account has successfully transferred £{{amount}} to the {{acc_name_to}} account.</p>
+
+The Secret Escapes Team

@@ -38,7 +38,8 @@ module.exports = (transaction, cb) => {
         `, [toId, fromId, debit], (err3, data3) => {
           // console.log('double entry:')
           // console.log(err3, data3);
-          return cb(err3, data3);
+          const success = "Success: transaction complete."
+          return cb(err3, data3, success);
         });
       });
     };

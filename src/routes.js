@@ -40,13 +40,13 @@ const newPayment = {
       console.log(" - - - - - - - req.payload: ")
       console.log(req.payload);
       console.log(' - - - - - - - - - - - - - - -')
-      makeTransfer(req.payload, (error, status) => {
+      makeTransfer(req.payload, (error, status, success) => {
         if (error) {
           console.log('Error:', error);
           return reply.view('payments', {error: error});
         }
-        console.log(error, status);
-        reply.redirect('/');
+        console.log(error, status, success);
+        reply.view('payments', {success});
       });
     }
   }

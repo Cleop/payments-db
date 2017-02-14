@@ -37,22 +37,26 @@ const newPayment = {
   path: '/new-payment',
   config: {
     handler: (req, reply) => {
+      console.log(" - - - - - - - req.payload: ")
       console.log(req.payload);
-      makeTransfer(req.payload, error => {
-        console.log("req.payload:"+req.payload);
-        if (error) console.log('Error:', error);
-        console.log("back in router");
+      console.log(' - - - - - - - - - - - - - - -')
+      makeTransfer(req.payload, (error, status) => {
+        if (error) {
+          console.log('Error:', error);
+          return reply.view('payments', {error: error});
+        }
+        console.log(error, status);
         reply.redirect('/');
       });
     }
   }
 };
 
-const accounts = {
+const nirvana = {
   method: 'GET',
   path: '/nirvana',
   handler:(req, reply) => {
-    getTransactions((error, transactions) => {
+    getTransactions(2,(error, transactions) => {
       if (error) console.log('Error:', error);
       console.log(transactions);
       reply.view('account', {transactions});
@@ -60,10 +64,23 @@ const accounts = {
   }
 };
 
+// const abba = {
+//   method: 'GET',
+//   path: '/abba',
+//   handler:(req, reply) => {
+//     getTransactions(4,(error, transactions) => {
+//       if (error) console.log('Error:', error);
+//       console.log(transactions);
+//       reply.view('account', {transactions});
+//     });
+//   }
+// };
+
 module.exports = [
   general,
   home,
   payments,
   newPayment,
-  accounts
+  nirvana,
+  // abba
 ];

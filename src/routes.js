@@ -16,6 +16,7 @@ const home = {
   method: 'GET',
   path: '/',
   handler:(req, reply) => {
+    req.headers['content-type'] === 'text' ? reply().code(400) :
     getAccounts((error, accounts) => {
       if (error) console.log('Error:', error);
       console.log("Back in router");
@@ -28,6 +29,7 @@ const payments = {
   method: 'GET',
   path: '/payments',
   handler:(req, reply) => {
+    req.headers['content-type'] === 'text' ? reply().code(400) :
     reply.view('payments', {transaction_id: req.query.transaction_id});
   }
 };
@@ -37,6 +39,7 @@ const newPayment = {
   path: '/new-payment',
   config: {
     handler: (req, reply) => {
+      req.headers['content-type'] === 'text' ? reply().code(400) :
       console.log(" - - - - - - - req.payload: ")
       console.log(req.payload);
       console.log(' - - - - - - - - - - - - - - -')
@@ -56,6 +59,7 @@ const nirvana = {
   method: 'GET',
   path: '/nirvana',
   handler:(req, reply) => {
+    req.headers['content-type'] === 'text' ? reply().code(400) :
     getTransactions(2,(error, transactions) => {
       if (error) console.log('Error:', error);
       console.log(transactions);
@@ -68,6 +72,7 @@ const queen = {
   method: 'GET',
   path: '/queen',
   handler:(req, reply) => {
+    req.headers['content-type'] === 'text' ? reply().code(400) :
     getTransactions(3,(error, transactions) => {
       if (error) console.log('Error:', error);
       console.log(transactions);
@@ -80,6 +85,7 @@ const abba = {
   method: 'GET',
   path: '/abba',
   handler:(req, reply) => {
+    req.headers['content-type'] === 'text' ? reply().code(400) :
     getTransactions(4,(error, transactions) => {
       if (error) console.log('Error:', error);
       console.log(transactions);

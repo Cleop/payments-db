@@ -1,8 +1,5 @@
 const dbConn = require('../db_connection.js');
 
-// How do I build this function as a function to be used? In build.sql?
-//  Then here do I just call select transferBalance(idFrom ,idTo, amountToTransfer);?
-
 module.exports = (transaction, cb) => {
   console.log('Running make_transfer.js');
   console.log(transaction.amount, transaction.account_from);

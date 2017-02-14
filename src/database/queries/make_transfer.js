@@ -46,6 +46,7 @@ module.exports = (transaction, cb) => {
   })
 }
 
+// OLD VERSION BEFORE RE-DESIGNING SCHEMA
 //   dbConn.query(`
 //     CREATE OR REPLACE FUNCTION transferBalance(idFrom int, idTo int, amountToTransfer decimal) RETURNS VARCHAR(100) AS $$
 //     DECLARE v_fromUserEndBalance DECIMAL;

@@ -14,5 +14,3 @@ module.exports = (acc_id_to, cb) => {
       error ? cb(error) : cb(null, result.rows);
     });
 };
-
-// SELECT CAST(tran_date AS DATE) FROM transactions

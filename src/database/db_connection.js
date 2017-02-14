@@ -17,6 +17,6 @@ const options = {
 
 if(username) { options.user = username; }
 if(password) { options.password = password; }
-// options.ssl = (options.host !== 'localhost');
+options.ssl = (options.host !== 'localhost');
 
 module.exports = new Pool(options);

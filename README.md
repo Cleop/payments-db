@@ -22,3 +22,19 @@ Given more time the two highest priority areas would be:
 - The templates for this email can be seen in the template folder
 - So what remains is getting the environment variables from the AWS account and
 writing the js file to execute the sending of the emails.
+
+## Schema
+
+| Accounts Table       |
+|----------------------|
+| acc_id (primary Key) |
+| acc_name             | 
+| acc_email            | 
+
+| Transactions Table   |
+|----------------------|
+| transaction_id (primary Key)|
+| account_id_from      | 
+| account_id_to        | 
+| amount               | 
+| tran_date            | 

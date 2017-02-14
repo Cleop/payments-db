@@ -3,6 +3,7 @@
 <form action="/new-payment" method="POST">
   <fieldset>
     <label for="account_from">From:</label>
+    <!-- if error display error -->
     <select name="account_from" required>
       <option value="1">Nirvana</option>
       <option value="2">Queen</option>
@@ -18,7 +19,6 @@
   <input name="amount" type="text" maxlength="15" required></input><br>
   </fieldset>
   <input type="submit" value="Make Payment">
-  <!-- <input type="hidden" name="transaction_id" value="{{transaction_id}}"> -->
 </form>
 
 <a class="link" href="/">Home</a>

@@ -19,7 +19,6 @@ const home = {
     req.headers['content-type'] === 'text' ? reply().code(400) :
     getAccounts((error, accounts) => {
       if (error) console.log('Error:', error);
-      console.log("Back in router");
       reply.view('index', {accounts});
     });
   }
@@ -40,15 +39,11 @@ const newPayment = {
   config: {
     handler: (req, reply) => {
       req.headers['content-type'] === 'text' ? reply().code(400) :
-      console.log(" - - - - - - - req.payload: ")
-      console.log(req.payload);
-      console.log(' - - - - - - - - - - - - - - -')
       makeTransfer(req.payload, (error, status, success) => {
         if (error) {
           console.log('Error:', error);
           return reply.view('payments', {error: error});
         }
-        console.log(error, status, success);
         reply.view('payments', {success});
       });
     }
@@ -62,7 +57,6 @@ const nirvana = {
     req.headers['content-type'] === 'text' ? reply().code(400) :
     getTransactions(2,(error, transactions) => {
       if (error) console.log('Error:', error);
-      console.log(transactions);
       reply.view('account', {transactions});
     });
   }
@@ -75,7 +69,6 @@ const queen = {
     req.headers['content-type'] === 'text' ? reply().code(400) :
     getTransactions(3,(error, transactions) => {
       if (error) console.log('Error:', error);
-      console.log(transactions);
       reply.view('account', {transactions});
     });
   }
@@ -88,7 +81,6 @@ const abba = {
     req.headers['content-type'] === 'text' ? reply().code(400) :
     getTransactions(4,(error, transactions) => {
       if (error) console.log('Error:', error);
-      console.log(transactions);
       reply.view('account', {transactions});
     });
   }

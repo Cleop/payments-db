@@ -64,17 +64,29 @@ const nirvana = {
   }
 };
 
-// const abba = {
-//   method: 'GET',
-//   path: '/abba',
-//   handler:(req, reply) => {
-//     getTransactions(4,(error, transactions) => {
-//       if (error) console.log('Error:', error);
-//       console.log(transactions);
-//       reply.view('account', {transactions});
-//     });
-//   }
-// };
+const queen = {
+  method: 'GET',
+  path: '/queen',
+  handler:(req, reply) => {
+    getTransactions(3,(error, transactions) => {
+      if (error) console.log('Error:', error);
+      console.log(transactions);
+      reply.view('account', {transactions});
+    });
+  }
+};
+
+const abba = {
+  method: 'GET',
+  path: '/abba',
+  handler:(req, reply) => {
+    getTransactions(4,(error, transactions) => {
+      if (error) console.log('Error:', error);
+      console.log(transactions);
+      reply.view('account', {transactions});
+    });
+  }
+};
 
 module.exports = [
   general,
@@ -82,5 +94,6 @@ module.exports = [
   payments,
   newPayment,
   nirvana,
-  // abba
+  abba,
+  queen
 ];
